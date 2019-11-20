@@ -1,24 +1,28 @@
-import 'package:book/bookui/screens/chatscreen.dart';
-import 'package:book/bookui/screens/upload.dart';
+
+import 'package:book/bookui/screens/login.dart';
+import 'package:book/bookui/widgets/booklist.dart';
 import 'package:book/bookui/widgets/category.dart';
 import 'package:book/bookui/widgets/recent_uploads.dart';
 import 'package:book/bookui/widgets/sllider.dart';
 import 'package:book/bookui/widgets/trending.dart';
+import 'package:book/learning/appbarsearch.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../appbarsearch.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentTab=1;
+  int _currentTab=0;
   final List<Widget> _children=[
     Nav(),
-    Settings(),
     Book(),
-    Chatscreen(),Upload(),
+    Upload(),
+    //Upload()
+    //Chatscreen(),
+    //Upload(),
 
   ];
 
@@ -51,54 +55,60 @@ class _HomeScreenState extends State<HomeScreen> {
 
           },
         ),
-        IconButton(
-          icon:Icon(Icons.settings),
-          onPressed: (){
+        // IconButton(
+        //   icon:Icon(Icons.settings),
+        //   onPressed: (){
 
-          },
-        ),
-        IconButton(
-          icon:Icon(Icons.search),
-          onPressed: (){
+        //   },
+        // ),
+        // IconButton(
+        //   icon:Icon(Icons.search),
+        //   onPressed: (){
 
-          },
-        )
+        //   },
+       // )
       ],),
       body: _children[_currentTab],
+      
       bottomNavigationBar: BottomNavigationBar(
+        //backgroundColor: Colors.deepPurple,
         elevation: 0,
+        type: BottomNavigationBarType.shifting,
         onTap: (int value){
           setState(() {
             _currentTab=value;
           });
         },
         currentIndex: _currentTab,
-        backgroundColor: Colors.white,
-        selectedItemColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.greenAccent.withOpacity(.1),
+        selectedItemColor: Colors.amber[900],
+        //selectedIconTheme:IconThemeData(size: 18, color: Color(0x00000001)),
+        //unselectedIconTheme:IconThemeData(size: 18, color: Color(0x00000002)),
+        unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home,size:20),
-            title: SizedBox.shrink(),
+            icon: Icon(Icons.home,size:20,),
+            title: Text('Home'),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book,size:20),
-            title: SizedBox.shrink()
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.book,size:0),
+          //   title: SizedBox.shrink()
+          // ),
           BottomNavigationBarItem(
             icon: CircleAvatar(
-              radius: 15,
+              radius: 20,
               backgroundImage: AssetImage('assets/images/book1.jpg',),
             ),
             title: SizedBox.shrink()
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message,size:20),
+            icon: Icon(FontAwesomeIcons.upload,size:20),
             title: SizedBox.shrink()
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.file_upload,size:20),
-            title: SizedBox.shrink()
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.file_upload,size:0),
+          //   title: SizedBox.shrink()
+          // ),
           
         ],
       ),
@@ -126,20 +136,19 @@ class Nav extends StatelessWidget {
   }
 }
 
-class Settings extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Text list'),
-    );
-  }
-}
-
 class Book extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return  BookList();
+                      
+  }
+}
+
+class Upload extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      child: Text('Provides list'),
+      child: LoginPage(),
     );
   }
 }

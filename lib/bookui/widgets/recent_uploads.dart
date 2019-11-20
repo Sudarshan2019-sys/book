@@ -8,9 +8,9 @@ class RecentUploads extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.start,
                 
                 children: <Widget>[
                 Text('Recent Uploads',
@@ -19,6 +19,7 @@ class RecentUploads extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.0
                 )),
+                Spacer(),
                 Text('See All',
                 style: TextStyle(
                   fontSize: 15,
@@ -45,7 +46,7 @@ class RecentUploads extends StatelessWidget {
                         Positioned(
                           bottom: 15,
                             child: Container(
-                            height: 120,
+                            height: 200,
                             width: 240,
                             
                             decoration: BoxDecoration(
@@ -65,14 +66,14 @@ class RecentUploads extends StatelessWidget {
                               letterSpacing: 1.0,
                             ),),
                             SizedBox(height: 2,),
-                            Text(upload.address,
+                            Text(upload.description,
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey,
                               fontWeight: FontWeight.w600,
                               letterSpacing: 1.0,
                             ),),
-                            Text('\$${upload.price} /night',
+                            Text('\$${upload.price}',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey,

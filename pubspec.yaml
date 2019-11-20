@@ -29,6 +29,10 @@ dependencies:
   image_picker:
   path_provider:
   sqflite:
+  #firebase_core:
+  #firebase_storage:
+  #image_cropper:
+  
 
 dev_dependencies:
   flutter_test:

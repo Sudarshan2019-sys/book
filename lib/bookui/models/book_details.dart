@@ -4,14 +4,14 @@ import 'package:book/bookui/models/book_activity.dart';
 
 class Book {
   String imageUrl;
-  String city;
+  String name;
   String country;
   String description;
   List<Activity> activities;
 
   Book({
     this.imageUrl,
-    this.city,
+    this.name,
     this.country,
     this.description,
     this.activities,
@@ -47,36 +47,36 @@ List<Activity> activities = [
 
 List<Book> books = [
   Book(
-    imageUrl: 'assets/images/venice.jpg',
-    city: 'Venice',
+    imageUrl: 'assets/images/book1.jpg',
+    name: 'Book1',
     country: 'Italy',
     description: 'Visit Venice for an amazing and unforgettable adventure.',
     activities: activities,
   ),
   Book(
     imageUrl: 'assets/images/paris.jpg',
-    city: 'Paris',
+    name: 'Book2',
     country: 'France',
     description: 'Visit Paris for an amazing and unforgettable adventure.',
     activities: activities,
   ),
   Book(
     imageUrl: 'assets/images/newdelhi.jpg',
-    city: 'New Delhi',
-    country: 'India',
+    name: 'New Delhi',
+    country: 'Book3',
     description: 'Visit New Delhi for an amazing and unforgettable adventure.',
     activities: activities,
   ),
   Book(
     imageUrl: 'assets/images/saopaulo.jpg',
-    city: 'Sao Paulo',
+    name: 'Book3',
     country: 'Brazil',
     description: 'Visit Sao Paulo for an amazing and unforgettable adventure.',
     activities: activities,
   ),
   Book(
     imageUrl: 'assets/images/newyork.jpg',
-    city: 'New York City',
+    name: 'Book4',
     country: 'United States',
     description: 'Visit New York for an amazing and unforgettable adventure.',
     activities: activities,

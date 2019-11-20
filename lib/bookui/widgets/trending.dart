@@ -18,8 +18,18 @@ class TrendingBooks extends StatelessWidget {
                           child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                Text('Popular Books'),
-                Text('View All'),
+                Text('Popular Books',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20
+                ),),
+                Text('View All',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20
+                ),),
               ],),
             ),
             
@@ -46,7 +56,7 @@ class TrendingBooks extends StatelessWidget {
                       child: Stack(
                         children: <Widget>[
                           Container(
-                            height:190,
+                            height:220,
                             width: 220,
                             decoration: BoxDecoration(
                               boxShadow: [
@@ -61,7 +71,7 @@ class TrendingBooks extends StatelessWidget {
                             child: Stack(
                               children: <Widget>[
                                 ClipRRect(borderRadius: BorderRadius.circular(10),
-                                child: Image(height: 180,width: 220,
+                                child: Image(height: 220,width: 220,
                                 image: AssetImage(book.imageUrl),
                                 fit: BoxFit.cover,),)
                               ],
@@ -77,14 +87,14 @@ class TrendingBooks extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Text('${book.city}',
+                                Text('${book.name}',
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   letterSpacing: 1.0,
                                 ),),
                                 
-                                Text('\$${book.city}',
+                                Text('\$123',
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600,

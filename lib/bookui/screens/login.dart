@@ -84,7 +84,7 @@ class LoginPage extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: RaisedButton(
-                          child: Text("Sigi In".toUpperCase()),
+                          child: Text("Sigi In".toUpperCase()+"to continue"),
                           onPressed: () async{
                             _users=await db.getAllUsers();
 
@@ -95,7 +95,7 @@ class LoginPage extends StatelessWidget {
                         if(_usernameController.text==user.username && _passwordController.text==user.password)
                         {Navigator.of(context).push(MaterialPageRoute(builder: (_)=>HomeScreen()));}
                         else
-                        {debugPrint('error username or password');}
+                        {}
                           }
                         },
                         

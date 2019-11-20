@@ -83,7 +83,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                 child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        Text(widget.book.city,
+                                        Text(widget.book.name,
                                         style: TextStyle(
                                           fontSize: 35,
                                           color: Colors.white,
@@ -94,7 +94,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                           children: <Widget>[
                                             Icon(FontAwesomeIcons.locationArrow,size: 20,color: Colors.white70,),
                                             SizedBox(width: 5,),
-                                            Text(widget.book.city,
+                                            Text(widget.book.name,
                                             style: TextStyle(
                                               fontSize: 20,
                                               color: Colors.white70,
